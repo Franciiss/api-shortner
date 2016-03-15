@@ -49,4 +49,4 @@ Não há requerimentos específicos de ferramentas de ORM, banco de dados a ser 
 2. Crie um *endpoint* que mostre as dez *URL's* mais acessadas 
 3. Crie um *client* em uma das linguagens que rodam na JVM para chamar sua API
 4. Faça um diagrama de sequencia da implementação feita nos casos de uso (Dica, use o https://www.websequencediagrams.com/)
-5. Monte um deploy da sua solução utilização containers 
+5. Monte um deploy da sua solução utilizando containers 
