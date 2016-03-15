@@ -6,6 +6,7 @@ Um pequeno projeto para testar suas habilidades como programador.
 O projeto consiste em reproduzir um encurtador de URL's (apenas sua API), simples e com poucas funções, porém com espaço suficiente para mostrar toda a gama de desenho de soluções, escolha de componentes, mapeamento ORM, uso de bibliotecas de terceiros, uso de GIT e criatividade.
 
 O projeto consiste de dois casos de uso: 
+
 1. Shorten URL
 2. Retrieve URL
 
