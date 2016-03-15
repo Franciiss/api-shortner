@@ -32,7 +32,7 @@ O projeto consiste de dois casos de uso:
 ![Retrieve URL](http://i.imgur.com/f9HESb7.jpg)
 
 1. Usuario chama a API passando a URL que deseja acessar
-    1. Caso a **URL** não exista, um erro especifico ```{ERR_CODE: 002, Description:SHORTENED URL NOT FOUYND}``` deve ser retornado.
+    1. Caso a **URL** não exista, um erro especifico ```{ERR_CODE: 002, Description:SHORTENED URL NOT FOUND}``` deve ser retornado.
 2. O Registro é lido de um repositório (*Data Store*)
 3. Esta tupla ou registro é mapeado para uma entidade de seu projeto
 3. É retornado para o cliente um resultado que contenha a URL final, a qual ele deve ser redirecionado automaticamente
