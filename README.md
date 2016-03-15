@@ -9,7 +9,7 @@ O projeto consiste de dois casos de uso:
 1. Short URL
 2. Retrieve URL
 
-### 1 - Short URL
+### 1 - Shorten URL
 ![Short URL](http://i.imgur.com/MFB7VP4.jpg)
 1. Usuario chama a API passando a URL que deseja encurtar e um parametro opcional **CUSTOM_ALIAS**
     1. Caso o **CUSTOM_ALIAS** já exista, um erro especifico ```{ERR_CODE: 001, Description:CUSTOM ALIAS ALREADY EXISTS}``` deve ser retornado.
