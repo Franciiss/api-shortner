@@ -28,6 +28,35 @@ O projeto consiste de dois casos de uso:
     1. Quanto tempo a operação levou
     2. URL Original
 
+Exemplos:
+
+1. Chamada sem CUSTOM_ALIAS
+```
+PUT http://shortener/create?url=http://www.bemobi.com.br
+
+{
+   "alias": "XYhakR",
+   "url": "http://shortener/u/XYhakR",
+   "statistics": {
+       "time_taken": "10ms",
+   }
+}
+```
+
+2. Chamada com CUSTOM_ALIAS
+```
+PUT http://shortener/create?url=http://www.bemobi.com.br&CUSTOM_ALIAS=bemobi
+
+{
+   "alias": "bemobi",
+   "url": "http://shortener/u/bemobi",
+   "statistics": {
+       "time_taken": "12ms",
+   }
+}
+```
+
+
 ### 2 - Retrieve URL
 ![Retrieve URL](http://i.imgur.com/f9HESb7.jpg)
 
