@@ -28,7 +28,7 @@ O projeto consiste de dois casos de uso:
     1. Quanto tempo a operação levou
     2. URL Original
 
-Exemplos:
+Exemplos (Você não precisa seguir este formato):
 
 * Chamada sem CUSTOM_ALIAS
 ```
@@ -56,6 +56,16 @@ PUT http://shortener/create?url=http://www.bemobi.com.br&CUSTOM_ALIAS=bemobi
 }
 ```
 
+* Chamada com CUSTOM_ALIAS que já existe
+```
+PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=bemobi
+
+{
+   "alias": "bemobi",
+   "err_code": "001",
+   "description": "CUSTOM ALIAS ALREADY EXISTS"
+}
+```
 
 ### 2 - Retrieve URL
 ![Retrieve URL](http://i.imgur.com/f9HESb7.jpg)
