@@ -30,7 +30,7 @@ O projeto consiste de dois casos de uso:
 
 Exemplos:
 
-1. Chamada sem CUSTOM_ALIAS
+* Chamada sem CUSTOM_ALIAS
 ```
 PUT http://shortener/create?url=http://www.bemobi.com.br
 
@@ -43,7 +43,7 @@ PUT http://shortener/create?url=http://www.bemobi.com.br
 }
 ```
 
-2. Chamada com CUSTOM_ALIAS
+* Chamada com CUSTOM_ALIAS
 ```
 PUT http://shortener/create?url=http://www.bemobi.com.br&CUSTOM_ALIAS=bemobi
 
