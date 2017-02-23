@@ -78,9 +78,7 @@ PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=bemobi
 
 ## Stack Tecnológico
 
-Hoje na Bemobi somos fãs do [Spring Framework](https://spring.io/), mas você pode utilizar qualquer linguagem que rode na JVM para realizar este teste.
-
-Não há requerimentos específicos de ferramentas de ORM, banco de dados a ser utilizado e requisitos não funcionais como escalabilidade e manutenibilidade, mas não quer dizer que eles não serão avaliados durante a leitura do seu código.
+Não há requerimentos específicos para linguagens, somos poliglotas. Utilize a linguagem que você se sente mais confortável.
 
 ## Bonus Points
 
