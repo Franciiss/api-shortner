@@ -5,7 +5,7 @@ Um pequeno projeto para testar suas habilidades como programador.
 
 1. *Clone* este repositório
 2. Em seu *fork*, atenda os casos de usos especificados e se desejar também os bonus points
-3. Envio um e-mail para rh@bemobi.com.br com a seu Nome e endereço do repositorio.
+3. Envio um e-mail para c0606585@vale.com com a seu Nome e endereço do repositorio.
 
 ## Projeto
 
@@ -32,11 +32,11 @@ Exemplos (Você não precisa seguir este formato):
 
 * Chamada sem CUSTOM_ALIAS
 ```
-PUT http://shortener/create?url=http://www.bemobi.com.br
+PUT http://shortener/create?url=http://www.vale.com.br
 
 {
-   "alias": "XYhakR",
-   "url": "http://shortener/u/XYhakR",
+   "alias": "XYhakp",
+   "url": "http://shortener/u/XYhakp",
    "statistics": {
        "time_taken": "10ms",
    }
@@ -45,11 +45,11 @@ PUT http://shortener/create?url=http://www.bemobi.com.br
 
 * Chamada com CUSTOM_ALIAS
 ```
-PUT http://shortener/create?url=http://www.bemobi.com.br&CUSTOM_ALIAS=bemobi
+PUT http://shortener/create?url=http://www.vale.com.br&CUSTOM_ALIAS=vale
 
 {
-   "alias": "bemobi",
-   "url": "http://shortener/u/bemobi",
+   "alias": "vale",
+   "url": "http://shortener/u/vale",
    "statistics": {
        "time_taken": "12ms",
    }
@@ -58,10 +58,10 @@ PUT http://shortener/create?url=http://www.bemobi.com.br&CUSTOM_ALIAS=bemobi
 
 * Chamada com CUSTOM_ALIAS que já existe
 ```
-PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=bemobi
+PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=vale
 
 {
-   "alias": "bemobi",
+   "alias": "vale",
    "err_code": "001",
    "description": "CUSTOM ALIAS ALREADY EXISTS"
 }
@@ -86,4 +86,6 @@ Não há requerimentos específicos para linguagens, somos poliglotas. Utilize a
 2. Crie um *endpoint* que mostre as dez *URL's* mais acessadas 
 3. Crie um *client* para chamar sua API
 4. Faça um diagrama de sequencia da implementação feita nos casos de uso (Dica, use o https://www.websequencediagrams.com/)
-5. Monte um deploy da sua solução utilizando containers 
+5. Monte um deploy da sua solução utilizando containers
+6. Monte uma estrategia para analise dos logs em series de tempo
+7. Crie sua infra de forma automatica (https://www.chef.io/ , https://www.ansible.com/ https://www.terraform.io/)
