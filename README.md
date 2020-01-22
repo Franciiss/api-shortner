@@ -1,25 +1,22 @@
-# Hire.me
-Um pequeno projeto para testar suas habilidades como programador.
+# DigitalLab - Francisco Borges
+Um pequeno projeto para testar minhashabilidades como programador.
 
-## Instruções Gerais
+## Instruções Gerais - Endpoints
 
-1. *Clone* este repositório
-2. Em seu *fork*, atenda os casos de usos especificados e se desejar também os bonus points
-3. Envio um e-mail para c0606585@vale.com com a seu Nome e endereço do repositorio.
+1. PUT (Params: url, alias): http://cliente-api-shortner.surge.sh/#/api-shortner
+2. PUT (Params: alias): http://cliente-api-shortner.surge.sh/#/api/shortner/:alias
+3. GET: http://cliente-api-shortner.surge.sh/#/ver/top10
 
-## Projeto
+## Cliente
 
-O projeto consiste em reproduzir um encurtador de URL's (apenas sua API), simples e com poucas funções, porém com espaço suficiente para mostrar toda a gama de desenho de soluções, escolha de componentes, mapeamento ORM, uso de bibliotecas de terceiros, uso de GIT e criatividade.
+http://cliente-api-shortner.surge.sh/#/
 
-O projeto consiste de dois casos de uso: 
+## Diagramas de Sequência
 
-1. Shorten URL
-2. Retrieve URL
+### 1 - Diagrama de Sequência de uma requisição PUT sem CUSTOM ALIAS
+![Short URL](https://i.imgur.com/hkiZ1XT.png)
 
-### 1 - Shorten URL
-![Short URL](http://i.imgur.com/MFB7VP4.jpg)
-
-1. Usuario chama a API passando a URL que deseja encurtar e um parametro opcional **CUSTOM_ALIAS**
+1. O Usuario chama a API passando a URL que deseja encurtar e um parametro opcional **CUSTOM_ALIAS**
     1. Caso o **CUSTOM_ALIAS** já exista, um erro especifico ```{ERR_CODE: 001, Description:CUSTOM ALIAS ALREADY EXISTS}``` deve ser retornado.
     2. Toda URL criada sem um **CUSTOM_ALIAS** deve ser reduzida a um novo alias, **você deve sugerir um algoritmo para isto e o porquê.**
     
@@ -28,47 +25,11 @@ O projeto consiste de dois casos de uso:
     1. Quanto tempo a operação levou
     2. URL Original
 
-Exemplos (Você não precisa seguir este formato):
+### 2 - Diagrama de Sequência de uma requisição PUT Com CUSTOM ALIAS
+![Short URL](https://i.imgur.com/hkiZ1XT.png)
 
-* Chamada sem CUSTOM_ALIAS
-```
-PUT http://shortener/create?url=http://www.vale.com.br
-
-{
-   "alias": "XYhakp",
-   "url": "http://shortener/u/XYhakp",
-   "statistics": {
-       "time_taken": "10ms",
-   }
-}
-```
-
-* Chamada com CUSTOM_ALIAS
-```
-PUT http://shortener/create?url=http://www.vale.com.br&CUSTOM_ALIAS=vale
-
-{
-   "alias": "vale",
-   "url": "http://shortener/u/vale",
-   "statistics": {
-       "time_taken": "12ms",
-   }
-}
-```
-
-* Chamada com CUSTOM_ALIAS que já existe
-```
-PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=vale
-
-{
-   "alias": "vale",
-   "err_code": "001",
-   "description": "CUSTOM ALIAS ALREADY EXISTS"
-}
-```
-
-### 2 - Retrieve URL
-![Retrieve URL](http://i.imgur.com/f9HESb7.jpg)
+### 3 - Retrieve URL
+![Retrieve URL](https://i.imgur.com/7qiySca.png)
 
 1. Usuario chama a API passando a URL que deseja acessar
     1. Caso a **URL** não exista, um erro especifico ```{ERR_CODE: 002, Description:SHORTENED URL NOT FOUND}``` deve ser retornado.
@@ -78,14 +39,13 @@ PUT http://shortener/create?url=http://www.github.com&CUSTOM_ALIAS=vale
 
 ## Stack Tecnológico
 
-Não há requerimentos específicos para linguagens, somos poliglotas. Utilize a linguagem que você se sente mais confortável.
+Backend: Node + Express
+Frontend: Vue + Quasar
+Banco de dados: Firebase RealTime Database
 
 ## Bonus Points
 
-1. Crie *testcases* para todas as funcionalidades criadas
-2. Crie um *endpoint* que mostre as dez *URL's* mais acessadas 
-3. Crie um *client* para chamar sua API
-4. Faça um diagrama de sequencia da implementação feita nos casos de uso (Dica, use o https://www.websequencediagrams.com/)
-5. Monte um deploy da sua solução utilizando containers
-6. Monte uma estrategia para analise dos logs em series de tempo
-7. Crie sua infra de forma automatica (https://www.chef.io/ , https://www.ansible.com/ https://www.terraform.io/)
+1. Crie um *endpoint* que mostre as dez *URL's* mais acessadas 
+2. Crie um *client* para chamar sua API
+3. Faça um diagrama de sequencia da implementação feita nos casos de uso (Dica, use o https://www.websequencediagrams.com/)
+4. Crie sua infra de forma automatica (https://www.chef.io/ , https://www.ansible.com/ https://www.terraform.io/)
