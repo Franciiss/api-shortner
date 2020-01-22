@@ -37,6 +37,14 @@ http://cliente-api-shortner.surge.sh/#/
 3. Esta tupla ou registro é mapeado para uma entidade de seu projeto
 3. É retornado para o cliente um resultado que contenha a URL final, a qual ele deve ser redirecionado automaticamente
 
+## Escolha do Algoritmo
+O algoritmo sugerido para reduzir a URL a um novo ALIAS é o Lempel–Ziv–Welch(LZW)
+Motivos pela escolha deste algoritmo:
+	1. Ser "lossless", ou seja, não há perda de dados durante a compressão;
+	2. Algoritmo Universal, já reconhecido;
+	3. Fácil implementação;
+	4. Eficiente em casos onde há muita repetição;
+
 ## Stack Tecnológico
 
 Backend: Node + Express
