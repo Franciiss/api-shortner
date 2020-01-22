@@ -4,7 +4,30 @@ let router = express.Router();
 const urlServices = require("../services/url.services");
 const lzwCompression = require("../lzwCompression"); 
 
+const getDurationInMilliseconds = (start) => {
+    const NS_PER_SEC = 1e9
+    const NS_TO_MS = 1e6
+    const diff = process.hrtime(start)
+
+    return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS
+}
+
 router.put('/api-shortner', async (req, res) => {
+
+    console.log(`${req.method} ${req.originalUrl} [STARTED]`)
+    const start = process.hrtime()
+
+    res.on('finish', () => {            
+        const durationInMilliseconds = getDurationInMilliseconds (start)
+        console.log(`${req.method} ${req.originalUrl} [FINISHED] ${durationInMilliseconds .toLocaleString()} ms`)
+    })
+
+    res.on('close', () => {
+        const durationInMilliseconds = getDurationInMilliseconds (start)
+        console.log(`${req.method} ${req.originalUrl} [CLOSED] ${durationInMilliseconds .toLocaleString()} ms`)
+    })
+
+    next()
 
     var obj = {
         url: req.query.url,
@@ -66,5 +89,6 @@ router.get('/ver/top10', async (req, res) => {
 getFullUrl = (req) => {
     return req.protocol + '://' + req.get('host') + req.path;
 }
+
 
 module.exports = router;
