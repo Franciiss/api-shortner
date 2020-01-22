@@ -26,9 +26,7 @@ router.put('/api-shortner', async (req, res) => {
         const durationInMilliseconds = getDurationInMilliseconds (start)
         console.log(`${req.method} ${req.originalUrl} [CLOSED] ${durationInMilliseconds .toLocaleString()} ms`)
     })
-
-    next()
-
+    
     var obj = {
         url: req.query.url,
         CUSTOM_ALIAS: req.query.CUSTOM_ALIAS,
