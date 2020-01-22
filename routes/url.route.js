@@ -25,7 +25,7 @@ router.put('/api-shortner', async (req, res) => {
             return res.status(409).send({ alias: docVerificado.custom_alias, ERR_CODE: "001", Description: "ALIAS ALREADY EXISTS" });
         }
 
-        objUrlComAliasEnconded = fullUrl + aliasEncoded;
+        objUrlComAliasEnconded = fullUrl + "/" + aliasEncoded;
 
         urlServices.adicionarUrl(objUrlComAliasEnconded, aliasEncoded);
 
@@ -42,17 +42,6 @@ router.put('/api-shortner', async (req, res) => {
         return res.status(202).send({ alias: obj.CUSTOM_ALIAS, url: objUrlComAlias, statistics: "" });
     
     }
-});
-
-router.get('/:alias', async (req, res) => {
-    const alias = req.params.alias;
-    const docVerificado = await urlServices.verificarCustomAlias(alias);
-
-    if(docVerificado) {
-        return res.redirect(Object.values(docVerificado)[0].url);
-    }
-    
-    return res.status(404).send({ ERR_CODE: "002", Description: "SHORTENED URL NOT FOUND" });
 });
 
 router.get('/api-shortner/:alias', async (req, res) => {
